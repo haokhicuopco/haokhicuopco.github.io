@@ -1,0 +1,84 @@
+/* Reset & base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+    position: relative;
+    background: url('assets/Background.png') no-repeat center center / cover;
+  }
+  
+  /* Lớp phủ mờ đen */
+  .background-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg,  rgba(0, 0, 0, 0.822), rgba(0, 0, 0, 0.527)); /* tối nhẹ */
+    backdrop-filter: blur(10px);   /* hiệu ứng blur */
+    z-index: -1;
+  }
+  
+  /* Main container */
+  main {
+    text-align: center;
+    z-index: 1;
+    padding: 20px;
+  }
+  
+  /* Logo */
+  .logo {
+    width: 350px;
+    margin-bottom: 100px;
+  }
+  
+  /* Buttons container */
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Button base */
+  .btn {
+    padding: 15px 30px;
+    font-size: 23px;
+    font-weight: bold;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    border: none;
+  }
+  
+  /* Download button: white gradient */
+  .btn-white {
+    background: linear-gradient(145deg, #ffffff, #e0e0e0);
+    color: #111;
+  }
+  
+  .btn-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Play in browser button: dark gradient */
+  .btn-dark {
+    background: linear-gradient(145deg, #D64126, #DB591F);
+    color: #f0f0f0;
+  }
+  
+  .btn-dark:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  }
+  
