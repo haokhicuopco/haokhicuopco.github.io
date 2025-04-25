@@ -1,26 +1,51 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hào Khí Cướp Cờ</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <title>Your Game Title</title>
+  <link rel="icon" href="assets/favicon.png">
+  <style>
+    body {
+      margin: 0;
+      background: #0f0f0f;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+    .btn {
+      padding: 15px 25px;
+      background: #5865F2;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #4752c4;
+    }
+  </style>
 </head>
 <body>
-  <div class="background-blur"></div>
-
-  <div class="container">
-    <div class="left">
-      <img src="images/title.png" alt="Game Title" class="title" />
-      <a href="https://drive.google.com/uc?export=download&id=1fV5Z3dRJ2RTiM6sJmRiYmHn614vj5k4_" class="download-btn" download>
-        Tải game
-      </a>      
-    </div>
-    <div class="right">
-      <img src="images/icon.jpg" alt="Game Icon" class="icon" />
-    </div>
+  <img class="logo" src="assets/logo.png" alt="Game Logo">
+  <h1>Your Game Title</h1>
+  <p>A weird, dark, stylish indie game.</p>
+  <div class="buttons">
+    <a class="btn" href="game.zip" download>Download for Windows</a>
+    <a class="btn" href="play.html">Open Game in your browser</a>
   </div>
-
-  <script src="js/script.js"></script>
 </body>
 </html>
