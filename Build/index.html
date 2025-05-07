@@ -97,7 +97,6 @@
         canvas.style.width = "960px";
         canvas.style.height = "600px";
       }
-      
 
       loadingBar.style.display = "block";
 
@@ -109,7 +108,7 @@
       function checkDeviceAndSendToUnity() {
         var isMobileDevice = isMobile();
         if (typeof unityInstance !== 'undefined' && unityInstance != null) {
-          unityInstance.SendMessage('GameManager', 'SetIsMobileDevice', isMobileDevice ? 'true' : 'false');
+          unityInstance.SendMessage('GameManager', 'SetIsMobileDevice', isMobileDevice ? 'true' : 'true');
         } else {
           console.warn("unityInstance chưa sẵn sàng.");
         }
