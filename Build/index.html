@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Hào Khí Cướp Cờ</title>
-    <link rel="shortcut icon" href="../assets/icon.jpg">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
@@ -99,6 +99,20 @@
       }
 
       loadingBar.style.display = "block";
+
+      function isMobile() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        return /android/i.test(userAgent) || /iPhone|iPad|iPod/i.test(userAgent);
+      }
+    
+      function checkDeviceAndSendToUnity() {
+        var isMobileDevice = isMobile();
+        if (typeof unityInstance !== 'undefined' && unityInstance != null) {
+          unityInstance.SendMessage('GameManager', 'SetIsMobileDevice', isMobileDevice ? 'true' : 'false');
+        } else {
+          console.warn("unityInstance chưa sẵn sàng.");
+        }
+      }
 
       var script = document.createElement("script");
       script.src = loaderUrl;
