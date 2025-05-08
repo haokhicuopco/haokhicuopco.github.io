@@ -107,6 +107,7 @@
     
       function checkDeviceAndSendToUnity() {
         var isMobileDevice = isMobile();
+        console.warn("TESTING");
         if (typeof unityInstance !== 'undefined' && unityInstance != null) {
           unityInstance.SendMessage('GameManager', 'SetIsMobileDevice', isMobileDevice ? 'true' : 'true');
         } else {
