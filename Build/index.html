@@ -125,6 +125,8 @@
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
+                window.unityInstance = unityInstance;
+                checkDeviceAndSendToUnity();
               }).catch((message) => {
                 alert(message);
               });
