@@ -100,6 +100,21 @@
 
       loadingBar.style.display = "block";
 
+      function isMobile() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        return /android/i.test(userAgent) || /iPhone|iPad|iPod/i.test(userAgent);
+      }
+    
+      function checkDeviceAndSendToUnity() {
+        var isMobileDevice = isMobile();
+        if (typeof unityInstance !== 'undefined' && unityInstance != null) {
+          if (isMobileDevice) unityInstance.SendMessage('GameManager', 'SetIsMobileDevice', 'true');
+          else unityInstance.SendMessage('GameManager', 'SetIsMobileDevice', 'false');
+        } else {
+          console.warn("unityInstance chưa sẵn sàng.");
+        }
+      }
+
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -110,6 +125,8 @@
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
+                window.unityInstance = unityInstance;
+                checkDeviceAndSendToUnity();
               }).catch((message) => {
                 alert(message);
               });
